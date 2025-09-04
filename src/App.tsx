@@ -6,6 +6,8 @@ function App() {
   const [ask, setAsk] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const API_URL = (import.meta.env.VITE_API_URL as string) ?? "http://localhost:3000";
+
   useEffect(() => {
     const body = document.body;
 
@@ -20,7 +22,7 @@ function App() {
     setLoading(true);
     setAsk('');
     try {
-      const res = await fetch("http://localhost:3000/ask", {
+      const res = await fetch(`${API_URL}/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ choice })
@@ -41,7 +43,7 @@ function App() {
       {!ask ?
         (
           <>
-            <header className="w-full flex justify-between items-center py-10 md:py-20">
+            <header className="w-full flex justify-between items-center py-5 md:py-10">
               <h1 className="font-semibold md:font-bold text-lg md:text-2xl" style={{ textShadow: '1px 1px 2px purple' }}>DateAI</h1>
               {
                 !dark ? <Moon width={24} height={24} color="black" onClick={() => setDark(!dark)} className="cursor-pointer" /> : <Sun width={24} height={24} color="white" onClick={() => setDark(!dark)} className="cursor-pointer" />
@@ -85,7 +87,7 @@ function App() {
         ) : (
           <>
             <div className="flex flex-col flex-1 justify-center items-center gap-10">
-              <h1 className="font-semibold md:font-bold text-lg md:text-5xl text-center w-6xl leading-[55px]" style={{ textShadow: '1px 1px 2px purple' }}>{ask}</h1>
+              <h1 className="font-semibold md:font-bold text-lg md:text-2xl text-justify w-6xl" >{ask}</h1>
               <button className={`flex gap-2 text-sm md:text-lg py-2 md:py-3 px-6 md:px-8 rounded-md md:rounded-xl font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `} onClick={() => setAsk('')}>Gerar Outro</button>
             </div>
           </>
