@@ -44,9 +44,9 @@ function App() {
         (
           <>
             <header className="w-full flex justify-between items-center py-5 md:py-10">
-              <h1 className="font-semibold md:font-bold text-lg md:text-2xl" style={{ textShadow: '1px 1px 2px purple' }}>DateAI</h1>
+              <h1 className="font-semibold md:font-bold text-lg md:text-1xl" style={{ textShadow: '1px 1px 1px purple' }}>DateAI</h1>
               {
-                !dark ? <Moon width={24} height={24} color="black" onClick={() => setDark(!dark)} className="cursor-pointer" /> : <Sun width={24} height={24} color="white" onClick={() => setDark(!dark)} className="cursor-pointer" />
+                !dark ? <Moon width={20} height={20} color="black" onClick={() => setDark(!dark)} className="cursor-pointer" /> : <Sun width={20} height={20} color="white" onClick={() => setDark(!dark)} className="cursor-pointer" />
               }
             </header>
             <main className="mb-36 flex-1 flex flex-col justify-center items-center">
@@ -54,27 +54,27 @@ function App() {
                 <p className={`text-lg md:text-3xl font-semibold mt-6 animate-pulse ${!dark ? "text-black" : "text-white"} `}>
                   Gerando sugestão...
                 </p>
-              ) : <div className="flex flex-col justify-center items-center gap-14">
-                <h2 className="font-bold text-3xl md:text-5xl text-center">Sem ideias para o date?<br />
+              ) : <div className="flex flex-col justify-center items-center gap-10 py-15 md:py-0">
+                <h2 className="font-bold text-2xl md:text-5xl text-center">Sem ideias para o date?<br />
                   A gente te ajuda!</h2>
-                <p className="font-light text-lg md:text-2xl text-center">Escolha uma categoria e a IA vai sugerir algo<br /> incrível para vocês fazerem juntos.</p>
+                <p className="font-light text-md md:text-1xl text-center">Escolha uma categoria e a IA vai sugerir algo<br /> incrível para vocês fazerem juntos.</p>
                 <div className="flex justify-center items-center">
                   <div className="w-[550px] h-auto flex items-center justify-center">
-                    <ul className="flex gap-2 md:gap-4 flex-wrap items-center justify-center w-[500px] md:w-auto">
+                    <ul className="flex gap-2 md:gap-4 flex-wrap items-center justify-center w-[350px] md:w-auto">
                       <li>
-                        <button onClick={() => handleGenerateAsk(1)} className={`cursor-pointer flex gap-1 md:gap-2 text-sm md:text-lg py-2 md:py-3 px-6 md:px-8 rounded-md md:rounded-xl font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `}><span>🏝️</span>Tropical</button>
+                        <button onClick={() => handleGenerateAsk(1)} className={`cursor-pointer flex gap-1 md:gap-2 text-[10px] md:text-[14px] py-2 md:py-2 px-4 md:px-8 rounded-md font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `}><span>🏝️</span>Tropical</button>
                       </li>
                       <li>
-                        <button onClick={() => handleGenerateAsk(2)} className={`cursor-pointer flex gap-1 md:gap-2 text-sm md:text-lg py-2 md:py-3 px-6 md:px-8 rounded-md md:rounded-xl font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `}><span>🍽️</span>Restaurante</button>
+                        <button onClick={() => handleGenerateAsk(2)} className={`cursor-pointer flex gap-1 md:gap-2 text-[10px] md:text-[14px] py-2 md:py-2 px-4 md:px-8 rounded-md font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `}><span>🍽️</span>Restaurante</button>
                       </li>
                       <li>
-                        <button onClick={() => handleGenerateAsk(3)} className={`cursor-pointer flex gap-1 md:gap-2 text-sm md:text-lg py-2 md:py-3 px-6 md:px-8 rounded-md md:rounded-xl font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `}><span>🏠</span>Caseiro</button>
+                        <button onClick={() => handleGenerateAsk(3)} className={`cursor-pointer flex gap-1 md:gap-2 text-[10px] md:text-[14px] py-2 md:py-2 px-4 md:px-8 rounded-md font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `}><span>🏠</span>Caseiro</button>
                       </li>
                       <li>
-                        <button onClick={() => handleGenerateAsk(4)} className={`cursor-pointer flex gap-1 md:gap-2 text-sm md:text-lg py-2 md:py-3 px-6 md:px-8 rounded-md md:rounded-xl font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `}><span>🛫</span>Viagem</button>
+                        <button onClick={() => handleGenerateAsk(4)} className={`cursor-pointer flex gap-1 md:gap-2 text-[10px] md:text-[14px] py-2 md:py-2 px-4 md:px-8 rounded-md font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `}><span>🛫</span>Viagem</button>
                       </li>
                       <li>
-                        <button onClick={() => handleGenerateAsk(5)} className={`cursor-pointer flex gap-1 md:gap-2 text-sm md:text-lg py-2 md:py-3 px-6 md:px-8 rounded-md md:rounded-xl font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `}><span>🌳</span>Aventura</button>
+                        <button onClick={() => handleGenerateAsk(5)} className={`cursor-pointer flex gap-1 md:gap-2 text-[10px] md:text-[14px] py-2 md:py-2 px-4 md:px-8 rounded-md font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `}><span>🌳</span>Aventura</button>
                       </li>
                     </ul>
                   </div>
@@ -85,12 +85,12 @@ function App() {
 
           </>
         ) : (
-          <>
+          <main className="flex h-dvh justify-center items-center">
             <div className="flex flex-col flex-1 justify-center items-center gap-10">
-              <h1 className="font-semibold md:font-bold text-lg md:text-2xl text-justify w-6xl" >{ask}</h1>
-              <button className={`flex gap-2 text-sm md:text-lg py-2 md:py-3 px-6 md:px-8 rounded-md md:rounded-xl font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `} onClick={() => setAsk('')}>Gerar Outro</button>
+              <h1 className="font-semibold md:font-bold text-sm md:text-2xl text-justify max-w-4xl" >{ask}</h1>
+              <button className={`flex gap-2 text-[10px] md:text-lg py-2 md:py-3 px-4 md:px-8 rounded-md md:rounded-xl font-semibold ${!dark ? "bg-[#363636] text-white" : "bg-[#eaeaea] text-[#0f0c11]"} `} onClick={() => setAsk('')}>Gerar Outro</button>
             </div>
-          </>
+          </main>
 
 
         )
